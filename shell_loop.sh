@@ -29,3 +29,21 @@ do
 		echo $line 
 	fi
 done < "$filee"
+
+#!/bin/bash
+echo "Line"
+read input
+
+case $input in 
+	  "pattern1")
+	     echo "line"
+	  ;;
+	  "pattern2")
+		 echo "line2"
+	  ;;
+	  "pattern3")
+		 echo "line3"
+	  ;;
+	  *)
+         echo "line...."
+esac
