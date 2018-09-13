@@ -30,7 +30,15 @@ X=ABC
 echo "${X}abc"
 
 # Special Variable https://www.tutorialspoint.com/unix/unix-special-variables.htm
-$echo "Write the PID of the current shell: $$"
-$echo "Write the filename of the current script: $0"
-$echo "Write the number of arguments supplied to a script: $#"
-$echo "The exit status of the las command executed: $?"
+echo "Write the PID of the current shell: $$"
+echo "Write the filename of the current script: $0"
+echo "Write the number of arguments supplied to a script: $#"
+echo "The exit status of the las command executed: $?"
+
+# try this in command: ./test.sh Zara Ali
+echo "File Name: $0"
+echo "First Parameter : $1"
+echo "Second Parameter : $2"
+echo "Quoted Values: $@"
+echo "Quoted Values: $*"
+echo "Total Number of Parameters : $#"
