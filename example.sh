@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/local/bin/bash
+# way 1:
 INPUT=stock.txt
 PRICE=0
 DRINKS=0
@@ -31,16 +32,19 @@ echo -e "Price " $PRICE
 IFS=$old_IFS
 
 
-# declare -A category                  # associative array
-# IFS=';'
-# while read name cate price ; do
-#   ((category[$cate]+=price))
-# done < stock.txt
 
-# sum=0
-# for cate in ${category[@]}; do       # loop over the indices
-#   printf "Total amount of %s: %d\n" $cate ${category[$cate]}
-#   ((sum+=${category[$cate]}))
-# done
+# way2: 
+declare -A category                  # associative array
+while IFS=';' read x y z; do
+	let category[$y]+=$z
+done < stock.txt
 
-# printf "Total amount of everything: %d\n" $sum
+
+
+sum=0
+for cate in "${!category[@]}"; do       # loop over the indices
+  printf "Total amount of %s: %d\n" $cate ${category[$cate]}
+  let sum+=${category[$cate]}
+done
+
+printf "Total amount of everything: %d\n" $sum
