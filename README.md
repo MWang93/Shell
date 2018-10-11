@@ -5,3 +5,6 @@
 # Run
 -  chmod +x while.sh
 -  ./while.sh
+
+# Note
+This is a learning repo.
